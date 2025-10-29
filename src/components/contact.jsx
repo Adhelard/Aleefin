@@ -61,7 +61,7 @@ const Contact = () => {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          Hubungi Saya ☎️
+          Hubungi aku☎️
         </motion.h2>
         
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
