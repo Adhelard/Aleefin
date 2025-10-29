@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Press+Start+2P&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+    --color-white-card: #FFFFFF;
+    --color-cream: #FFFBF0;
+    --color-black-text: #121212;
+    --color-accent-yellow: #F5C600;
+
+     --color-gray-card: #112240;
+    --color-navy: #0A192F;
+    --color-white-text: #E0E0E0;
+    --color-accent-yellow-dark: #F5C600;
+
+    --font-pixel: "Press Start 2P", Nunito;
+}
+
