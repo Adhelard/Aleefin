@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Impor ScrollTrigger
 import Lenis from '@studio-freight/lenis'; // Impor Lenis
 
 // Impor Komponen Anda
-import SplashScreen from './components/SplashScreen';
+import SplashScreen from './components/splashscreen';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
