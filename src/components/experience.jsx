@@ -44,9 +44,12 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="experience" ref={sectionRef} className="py-24 bg-white-card dark:bg-gray-card">
+    <section id="experience" ref={sectionRef} className="py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-6 max-w-3xl">
-        <h2 className="text-6xl font-bold font-pixel text-center mb-16 text-black-text dark:text-white-text">Experience ⌛</h2>
+        <h2 className="text-6xl font-bold text-center mb-16 text-black-text dark:text-white-text">
+          {/* font-pixel dihapus */}
+          Experience ⌛
+        </h2>
         <div className="relative space-y-10">
           
           {/* Garis Waktu Vertikal - tambahkan ref di sini */}

@@ -27,9 +27,10 @@ const SplashScreen = () => {
   }, []);
 
   return (
-    // Gunakan warna navy (gelap) untuk splash
-    <div ref={containerRef} className="fixed inset-0 bg-navy flex items-center justify-center z-50">
-      <div ref={logoRef} className="text-white-text font-pixel text-6xl font-heading"> {/* Terapkan font-heading */}
+    // Mengganti bg-navy menjadi bg-white/dark:bg-gray-950 agar konsisten
+    <div ref={containerRef} className="fixed inset-0 bg-white dark:bg-gray-950 flex items-center justify-center z-50">
+      <div ref={logoRef} className="text-gray-900 dark:text-gray-100 font-bold text-6xl"> 
+        {/* font-pixel dan font-heading dihapus */}
         Hola!, yo soy Aleefin!
       </div>
     </div>

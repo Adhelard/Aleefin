@@ -84,29 +84,25 @@ const About = () => {
 
   return (
     // Mengganti background agar sedikit kontras dari section lain
-    <section ref={sectionRef} id="about" className="py-32 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-8 max-w-6xl">
-        
-        {/* --- BAGIAN 1: DESKRIPSI DIRI --- */}
-        <h2 ref={titleRef} className="text-5xl md:text-6xl font-bold font-pixel mb-8 text-center text-black-text dark:text-white-text">
-          About me? Really?👤
+    <section id="projects" ref={sectionRef} className="py-24 ">
+      <div className="container mx-auto px-6">
+        <h2 className="text-6xl font-bold text-center mb-16 text-black-text dark:text-white-text">
+          {/* font-pixel dihapus */}
+          Project 👾
         </h2>
-        <p ref={descRef} className="text-black-text/80 dark:text-white-text/80 mb-24 text-lg md:text-xl text-center max-w-4xl mx-auto leading-relaxed">
-          {/* (Saya perbaiki typo "aya" menjadi "Saya") */}
-          Saya adalah seorang software developer yang antusias dengan teknologi, dengan fokus pada Front-End (Flutter, Tailwind) dan Back-End (PHP, Firebase, SQL). Saya juga memiliki pengalaman dalam pengembangan IoT (Arduino) dan Machine Learning sederhana. Saat ini saya aktif sebagai Anggota Tim Developer di Sekolah Impian dan sedang magang di PT Al Khawarizmi.
-        </p>
-
-        {/* --- BAGIAN 2: KARTU PENCAPAIAN --- */}
-        <h3 className="text-4xl font-bold font-pixel mb-12 text-black-text dark:text-white-text">
-          Pencapaian
-        </h3>
-        <div ref={achievementsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          {achievements.map((item, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white-card dark:bg-gray-card p-8 rounded-lg shadow-lg border-2 border-b-4"
-              whileHover={{ y: -8, scale: 1.03 }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
+              ref={el => cardsRef.current[index] = el}
+              // Mengganti bg-white-card menjadi bg-white (lebih bersih)
+              className="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden flex flex-col border border-gray-200 dark:border-gray-800"
+              whileHover={{ 
+                y: -10, 
+                // Mengganti shadow kuning menjadi shadow standar
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" 
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <div className="mb-4">{item.icon}</div>
               <h4 className="text-xl font-semibold mb-2 text-black-text dark:text-white-text">{item.title}</h4>

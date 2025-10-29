@@ -29,27 +29,30 @@ const Projects = () => {
   }, []);
 
   return (
-    // Gunakan warna dasar (cream/navy)
     <section id="projects" ref={sectionRef} className="py-24 ">
       <div className="container mx-auto px-6">
-        <h2 className="text-6xl font-bold font-pixel text-center mb-16 text-black-text dark:text-white-text">Project 👾</h2>
+        <h2 className="text-6xl font-bold text-center mb-16 text-black-text dark:text-white-text">
+          {/* font-pixel dihapus */}
+          Project 👾
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
               ref={el => cardsRef.current[index] = el}
-              // Gunakan warna kartu (white/gray-card)
-              className="bg-white-card dark:bg-gray-card rounded-lg shadow-lg overflow-hidden flex flex-col"
+              // Mengganti bg-white-card menjadi bg-white (lebih bersih)
+              className="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden flex flex-col border border-gray-200 dark:border-gray-800"
               whileHover={{ 
                 y: -10, 
-                boxShadow: "0 20px 40px -15px rgba(245, 198, 0, 0.3)" // Shadow kuning lebih kuat
+                // Mengganti shadow kuning menjadi shadow standar
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" 
               }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <img src={project.img} alt={project.title} className="w-full h-56 object-cover" />
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col ">
                 <h3 className="text-xl font-semibold mb-2 text-black-text dark:text-white-text">{project.title}</h3>
-                <p className="text-black-text/80 dark:text-white-text/80 mb-4 flex-grow">{project.desc}</p>
+                <p className="text-black-text/80 dark:text-white-text/80 mb-4 ">{project.desc}</p>
                 <a 
                   href={project.link} 
                   className="text-accent-yellow font-semibold hover:underline self-start"

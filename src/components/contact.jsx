@@ -51,8 +51,8 @@ const Contact = () => {
     };
   return  (
     // Gunakan warna sekunder (white-card/gray-card)
-    <section id="contact" className="p-24 bg-white-card dark:bg-gray-card">
-          <div className="rounded-2xl bg-amber-200 border-2 border-b-4 p-16">
+    <section id="contact" className="p-24 bg-gray-50 dark:bg-gray-900">
+          
           <div className="container mx-auto px-6">
         <motion.h2
           className="text-5xl font-bold font-pixel text-center mb-16 text-black"
@@ -68,22 +68,18 @@ const Contact = () => {
           {/* Bagian Kiri: Info Kontak */}
           <motion.div 
             className="space-y-6"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={fadeInUp}
-            transition={{ delay: 0.2 }}
+            // ... (props motion tetap sama)
           >
-            <p className="text-lg text-black/80">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
               Saya terbuka untuk kolaborasi atau sekadar berdiskusi. Jangan ragu untuk menghubungi saya melalui formulir atau detail kontak di bawah ini.
             </p>
             <a href="mailto:Blackarifin15@gmail.com" className="flex items-center space-x-3 group">
               <EnvelopeIcon className="w-6 h-6 text-accent-yellow"/>
-              <span className="text-lg text-black group-hover:underline">Blackarifin15@gmail.com</span>
+              <span className="text-lg text-gray-800 dark:text-gray-200 group-hover:underline">Blackarifin15@gmail.com</span>
             </a>
-            <a href="https://www.linkedin.com/in/muhammad-arifin-740588386/" className="flex items-center space-x-3 group"> {/* Ganti dengan link LinkedIn */}
+            <a href="https://www.linkedin.com/in/muhammad-arifin-740588386/" className="flex items-center space-x-3 group">
               <svg className="w-6 h-6 text-accent-yellow" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              <span className="text-lg text-black group-hover:underline">LinkedIn</span>
+              <span className="text-lg text-gray-800 dark:text-gray-200 group-hover:underline">LinkedIn</span>
             </a>
           </motion.div>
 
@@ -91,34 +87,31 @@ const Contact = () => {
         <motion.form 
             onSubmit={handleSubmit}
             className="space-y-5"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={fadeInUp}
-            transition={{ delay: 0.4 }}
+            // ... (props motion tetap sama)
           >
             <input 
               type="text"
-              name="nama" // <-- samakan dengan state
+              name="nama"
               placeholder="Nama Anda"
-              value={formData.nama} // <-- hubungkan ke state
+              value={formData.nama}
               onChange={handleChange}
-              className="w-full p-4 border border-gray-300 dark:border-gray-700 rounded-lg bg-cream dark:bg-navy text-black-text dark:text-white-text focus:outline-none focus:ring-2 focus:ring-accent-yellow" 
+              // Mengganti bg-cream/navy menjadi bg-white/gray-800
+              className="w-full p-4 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-black-text dark:text-white-text focus:outline-none focus:ring-2 focus:ring-accent-yellow" 
             />
             <input 
               type="email"
-              name="email" // <-- samakan dengan state
+              name="email"
               placeholder="Email Anda"
-              value={formData.email} // <-- hubungkan ke state
-             onChange={handleChange}
-              className="w-full p-4 border border-gray-300 dark:border-gray-700 rounded-lg bg-cream dark:bg-navy text-black-text dark:text-white-text focus:outline-none focus:ring-2 focus:ring-accent-yellow" 
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-4 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-black-text dark:text-white-text focus:outline-none focus:ring-2 focus:ring-accent-yellow" 
             />
             <textarea 
-              name="pesan" // <-- samakan dengan state
+              name="pesan"
               placeholder="Pesan Anda"
-              value={formData.pesan} // <-- hubungkan ke state
+              value={formData.pesan}
               onChange={handleChange}
-              className="w-full p-4 border border-gray-300 dark:border-gray-700 rounded-lg h-36 bg-cream dark:bg-navy text-black-text dark:text-white-text focus:outline-none focus:ring-2 focus:ring-accent-yellow"
+              className="w-full p-4 border border-gray-300 dark:border-gray-700 rounded-lg h-36 bg-white dark:bg-gray-800 text-black-text dark:text-white-text focus:outline-none focus:ring-2 focus:ring-accent-yellow"
             ></textarea>
             <button 
               type="submit" 
@@ -129,7 +122,6 @@ const Contact = () => {
             {status && <p className="text-center text-black-text dark:text-white-text">{status}</p>}
           </motion.form>
         </div>
-      </div>
         </div>  
     </section>
   );

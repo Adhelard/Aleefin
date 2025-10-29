@@ -49,25 +49,28 @@ const Skills = () => {
   return (
     <section id="skills" ref={sectionRef} className="py-24 ">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold font-pixel text-center mb-16 text-black-text dark:text-white-text">What can i do? 🕹️</h2>
+        <h2 className="text-4xl font-bold text-center mb-16 text-black-text dark:text-white-text">
+          {/* font-pixel dihapus */}
+          What can i do? 🕹️
+        </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              // Tambahkan ref ke array
               ref={el => itemsRef.current[index] = el} 
-              // Set opacity awal ke 0 agar GSAP bisa mengontrolnya
               style={{ opacity: 0 }} 
-              className="flex flex-col items-center justify-center p-6 bg-amber-200 border-2 border-b-4 rounded-sm shadow-lg"
-              // Efek hover dari Framer Motion tetap kita pakai!
+              // Mengganti style kartu dari 'bg-amber-200' dan 'border-b-4'
+              // menjadi 'border' tipis yang bersih
+              className="flex flex-col items-center justify-center p-6 border border-gray-200 dark:border-gray-700 rounded-lg"
               whileHover={{ 
-                scale: 1.1, 
-                boxShadow: "0 10px 30px -10px rgba(245, 198, 0, 0.4)",
+                scale: 1.05, 
+                // Mengganti shadow kuning menjadi shadow standar
+                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
                 y: -5 
               }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
             >
-            <p className="text-lg font-medium text-black">{skill.name}</p>
+            <p className="text-lg font-medium text-gray-700 dark:text-gray-300">{skill.name}</p>
             </motion.div>
           ))}
         </div>
