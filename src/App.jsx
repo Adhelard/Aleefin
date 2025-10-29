@@ -6,12 +6,12 @@ import Lenis from '@studio-freight/lenis'; // Impor Lenis
 
 // Impor Komponen Anda
 import SplashScreen from './components/splashscreen';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
+import Navbar from './components/navbar';
+import Hero from './components/hero';
+import About from './components/about';
 import Skills from './components/skills';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
+import Experience from './components/experience';
+import Projects from './components/projects';
 import Contact from './components/contact';
 import CursorFollower from './components/Cursorfollower';
 import { ThemeProvider, useTheme } from './Themecontext';
